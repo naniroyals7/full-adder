@@ -1,0 +1,15 @@
+module full_adder (
+    input  wire A,       // First input bit
+    input  wire B,       // Second input bit
+    input  wire Cin,     // Carry input
+    output wire Sum,     // Sum output
+    output wire Cout     // Carry output
+);
+
+    // Sum = A XOR B XOR Cin
+    assign Sum  = A ^ B ^ Cin;
+
+    // Cout = (A & B) | (B & Cin) | (A & Cin)
+    assign Cout = (A & B) | (B & Cin) | (A & Cin);
+
+endmodule
